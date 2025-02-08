@@ -5,16 +5,17 @@ import com.HerreraCodes.FreebiesBackend.Model.Item;
 import org.openqa.selenium.*;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-@Service
+@Component
 public class Scraper {
     @Autowired
-    private final RemoteWebDriver driver;
+    private static RemoteWebDriver driver;
 
     @Autowired
     public Scraper(RemoteWebDriver driver) {
