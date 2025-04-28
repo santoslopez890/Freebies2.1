@@ -22,16 +22,12 @@ public class Scraper {
         this.driver = driver;
     }
     public List<Item> scrapeData(String category, String zipCode)throws InterruptedException{
-        //encoder
-        ZipCodeEncoder encoder = ZipCodeEncoder.getInstance();
-        String encodedZip = encoder.getEncodedZip(zipCode);
-
         //list for my items
         List<Item>  itemArrayList=new ArrayList<>();
 
 
         System.out.println("going to url");
-        String url=Links.linkp1.getLink()+encodedZip+"/"+category+Links.linkp2.getLink();
+        String url=Links.linkp1.getLink()+zipCode+"/"+category+Links.linkp2.getLink();
         driver.get(url);
         //remove for now might add later
 //        System.out.println("removing box");
